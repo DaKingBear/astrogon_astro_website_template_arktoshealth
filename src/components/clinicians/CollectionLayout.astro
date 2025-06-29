@@ -1,0 +1,24 @@
+---
+import type { cliniciansEntry } from "@/types";
+import BaseLayout from "@components/base/BaseLayout.astro";
+import PageHeader from "@components/common/PageHeader.astro";
+import cliniciansCard from "@components/clinicians/Card.astro";
+
+interface Props {
+  cliniciansIndex: cliniciansEntry;
+  entries: cliniciansEntry[];
+}
+
+const { cliniciansIndex, entries } = Astro.props;
+---
+
+<BaseLayout title={cliniciansIndex.data.title} description={cliniciansIndex.data.description}>
+  <PageHeader title={cliniciansIndex.data.title} />
+  <section class="section-sm pb-0">
+    <div class="container">
+      <div class="row justify-center">
+        {entries.map((entry) => <CliniciansCard entry={entry} />)}
+      </div>
+    </div>
+  </section>
+</BaseLayout>

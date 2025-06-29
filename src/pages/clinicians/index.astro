@@ -1,0 +1,12 @@
+---
+import type { CliniciansEntry } from "@/types";
+import CollectionLayout from "@components/clinicians/CollectionLayout.astro";
+import { getEntries } from "@lib/contentParser";
+import { getIndex } from "@lib/contentParser";
+import { sortByTitle } from "@lib/sortFunctions";
+
+const cliniciansIndex = await getIndex("clinicians") as CliniciansEntry;
+const entries = await getEntries("clinicians", sortByTitle) as CliniciansEntry[];
+---
+
+<CollectionLayout cliniciansIndex={cliniciansIndex} entries={entries} />

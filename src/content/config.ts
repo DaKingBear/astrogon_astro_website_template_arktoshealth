@@ -33,10 +33,10 @@ const about = defineCollection({
     }),
 });
 
-const authors = defineCollection({
+const clinicians = defineCollection({
   loader: glob({
     pattern: "**\/[^_]*.{md,mdx}",
-    base: "./src/content/authors",
+    base: "./src/content/clinicians",
   }),
   schema: ({ image }) =>
     searchable.extend({
@@ -54,7 +54,7 @@ const blog = defineCollection({
       date: z.date().optional(),
       image: image().optional(),
       imageAlt: z.string().default(""),
-      author: reference("authors").optional(),
+      author: reference("clinicians").optional(),
       categories: z.array(z.string()).optional(),
       tags: z.array(z.string()).optional(),
       complexity: z.number().default(1),
@@ -111,7 +111,7 @@ const poetry = defineCollection({
       date: z.date().optional(),
       image: image().optional(),
       imageAlt: z.string().default(""),
-      author: reference("authors").optional(),
+      author: reference("clinicians").optional(),
     }),
 });
 
@@ -142,7 +142,7 @@ const recipes = defineCollection({
       date: z.date().optional(),
       image: image().optional(),
       imageAlt: z.string().default(""),
-      author: reference("authors").optional(),
+      author: reference("clinicians").optional(),
       prepTime: z.number().optional(),
       servings: z.number().optional(),
       diet: z.string().optional(),
@@ -165,7 +165,7 @@ const terms = defineCollection({
 // Export collections
 export const collections = {
   about,
-  authors,
+  clinicians,
   blog,
   docs,
   home,

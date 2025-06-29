@@ -1,12 +1,12 @@
 ---
-import type { AuthorsEntry, BlogEntry } from "@/types";
-import EntryLayout from "@components/authors/EntryLayout.astro";
+import type { clinicianssEntry, BlogEntry } from "@/types";
+import EntryLayout from "@components/clinicians/EntryLayout.astro";
 import { slugify } from "@lib/textConverter";
 import { getEntries } from "@lib/contentParser";
 import { sortByDate } from "@lib/sortFunctions";
 
 export async function getStaticPaths() {
-  const entries = (await getEntries("authors")) as AuthorsEntry[];
+  const entries = (await getEntries("clinicians")) as clinicianssEntry[];
   const paths = entries.map((entry) => ({
     params: {
       entry: entry.id,
@@ -21,7 +21,7 @@ const { title } = entry.data;
 const blogEntries = (await getEntries("blog", sortByDate)) as BlogEntry[];
 const filteredBlogEntries = blogEntries.filter(
   (entry: BlogEntry) =>
-    slugify(entry.data.author?.id ? entry.data.author.id : "Jane Doe") ===
+    slugify(entry.data.clinicians?.id ? entry.data.clinicians.id : "Teddy Botana") ===
     slugify(title)
 );
 ---
