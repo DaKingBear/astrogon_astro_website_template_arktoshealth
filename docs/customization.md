@@ -2,10 +2,6 @@
 
 ## Content Collections
 
-### Stock Content
-
-The written content in the template's collections was AI generated. The images are Creative Commons licenced with a paint filter applied to them. The goal was to have disposable content that better demonstrates the form of the collections than "Lorem ipsum". In case you're unsure, review my [Terms of Use](https://astrogon.reednel.com/terms/) for the policy on the use and redistribution of this content.
-
 ### The Mechanics
 
 The idea of a **Content Collection** is one of Astro's most central features. A content collection is a structured way to store and retrieve content for your site. Each collection consists of one or multiple **Entries**, which, in this site, are stored in a Markdown (md, mdx) format. At the top of any of these entry files, you will find **frontmatter**. This is space designed to hold any metadata you want to add, such as an entry's publication date, author, or whatever you want.

@@ -10,6 +10,7 @@ interface Props {
 }
 
 const { cliniciansIndex, entries } = Astro.props;
+const CliniciansCard = BlogCard;
 ---
 
 <BaseLayout title={cliniciansIndex.data.title} description={cliniciansIndex.data.description}>
