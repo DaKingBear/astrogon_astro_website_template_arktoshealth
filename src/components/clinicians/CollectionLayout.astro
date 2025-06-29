@@ -2,7 +2,7 @@
 import type { cliniciansEntry } from "@/types";
 import BaseLayout from "@components/base/BaseLayout.astro";
 import PageHeader from "@components/common/PageHeader.astro";
-import cliniciansCard from "@components/clinicians/Card.astro";
+import CliniciansCard from "@components/clinicians/Card.astro";
 
 interface Props {
   cliniciansIndex: cliniciansEntry;
@@ -10,7 +10,6 @@ interface Props {
 }
 
 const { cliniciansIndex, entries } = Astro.props;
-const CliniciansCard = BlogCard;
 ---
 
 <BaseLayout title={cliniciansIndex.data.title} description={cliniciansIndex.data.description}>
